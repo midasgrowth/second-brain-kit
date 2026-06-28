@@ -8,3 +8,7 @@ desktop.ini
 *.bak
 *.tmp
 *~
+
+# Bastidores de construção (processo, não produto — contêm paths/notas locais)
+.superpowers/
+docs/superpowers/
