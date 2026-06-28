@@ -46,6 +46,12 @@ Consulte a documentação do conector que você quer usar e siga o passo a passo
 de adicionado, você pode verificar com `claude mcp list` e remover com
 `claude mcp remove <nome-do-conector>`.
 
+Um detalhe que pega iniciante: o conector é um **servidor** — um processo que precisa estar
+no ar para funcionar. O comando que você passa depois do `--` é justamente o que inicia esse
+servidor; o Claude Code o sobe quando precisa. Se um conector parar de responder, na maioria
+das vezes é porque o servidor não está rodando ou a credencial expirou — confira esses dois
+pontos primeiro.
+
 ## Regra de segurança
 
 **Use SUAS próprias credenciais; nunca compartilhe ou versione tokens.**

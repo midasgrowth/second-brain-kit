@@ -14,7 +14,8 @@ O "segundo cérebro" é a combinação de quatro peças que trabalham juntas:
    duradouros sobre você e seus projetos, com um índice que a IA lê no começo da sessão.
 3. **Skills (slash commands)** — pequenos comandos como `/diario` e `/tldr` que disparam
    rotinas prontas (carregar contexto, resumir e salvar). Você digita o comando, a skill
-   faz o trabalho.
+   faz o trabalho. Cada skill mora numa pasta `.claude/skills/<nome>/SKILL.md` dentro do
+   vault.
 4. **Um `CLAUDE.md` inteligente** — um arquivo de instruções que diz à IA quem você é,
    como você trabalha e onde procurar cada coisa. É a primeira coisa que ela lê.
 
