@@ -109,7 +109,10 @@ importa:
   - Windows: `%USERPROFILE%\.claude\CLAUDE.md`
 - Abrir o Obsidian numa pasta:
   - Mac: `open -a Obsidian "<pasta>"`
-  - Windows: `start "" obsidian` (ou abrir manualmente pelo app)
+  - Windows: abrir o Obsidian pelo app e usar "Open folder as vault" apontando para a pasta
+    (mais confiável que um comando de terminal, que depende da instalação).
+  - Em qualquer SO, não é obrigatório abrir o Obsidian agora — o vault é só uma pasta de
+    arquivos `.md` e funciona sem ele.
 
 **Cheque se já existe um `CLAUDE.md` global** no caminho acima. Se existir, **NÃO
 sobrescreva**. Apresente as duas opções e pergunte qual a pessoa prefere:
@@ -168,13 +171,14 @@ Só execute este passo depois do "pode construir". Trabalhe de forma cross-plata
 
 1. **Criar as pastas do vault** com as pastas decididas no Passo 2. Use a variante do SO da
    pessoa (detectado no Passo 1):
+   Inclua sempre a pasta `memoria/` (onde o sistema de memória vai morar).
    - **Mac/Linux:**
      ```
-     mkdir -p inbox diario projetos arquivo <area1> <area2>
+     mkdir -p inbox diario projetos arquivo memoria <area1> <area2>
      ```
    - **Windows (PowerShell):**
      ```
-     New-Item -ItemType Directory -Force inbox, diario, projetos, arquivo, <area1>, <area2>
+     New-Item -ItemType Directory -Force inbox, diario, projetos, arquivo, memoria, <area1>, <area2>
      ```
 
 2. **Gravar o `CLAUDE.md` do vault** a partir de `templates/CLAUDE.vault.md`, preenchendo os
@@ -191,8 +195,9 @@ Só execute este passo depois do "pode construir". Trabalhe de forma cross-plata
    - **Mac/Linux:** `cp -r .claude/skills/diario .claude/skills/tldr <vault>/.claude/skills/`
    - **Windows (PowerShell):** `Copy-Item -Recurse .claude/skills/diario, .claude/skills/tldr <vault>\.claude\skills\`
 
-4. **Criar a pasta de memória** e colocar `templates/MEMORY.md` como índice inicial dentro
-   dela.
+4. **Inicializar a memória.** Copie `templates/MEMORY.md` para `memoria/MEMORY.md` (a pasta
+   `memoria/` já foi criada no item 1). Esse é o índice inicial; os 3 exemplos dentro dele são
+   para apagar e substituir pelos reais conforme o `/tldr` rodar.
 
 5. **Se havia `CLAUDE.md`/anotações pré-existentes e a pessoa escolheu "preservar e somar":**
    mescle o conteúdo antigo sem perder nada, **mostre o resultado ANTES de gravar** para a
