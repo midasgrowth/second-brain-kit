@@ -166,10 +166,16 @@ disso** (Regra de Ouro 1).
 Só execute este passo depois do "pode construir". Trabalhe de forma cross-plataforma e
 **explique cada peça enquanto cria** (uma linha por peça, pra pessoa entender o que apareceu).
 
-1. **Criar as pastas do vault.** Use `mkdir -p` com as pastas decididas no Passo 2. Ex.:
-   ```
-   mkdir -p inbox diario projetos arquivo <area1> <area2>
-   ```
+1. **Criar as pastas do vault** com as pastas decididas no Passo 2. Use a variante do SO da
+   pessoa (detectado no Passo 1):
+   - **Mac/Linux:**
+     ```
+     mkdir -p inbox diario projetos arquivo <area1> <area2>
+     ```
+   - **Windows (PowerShell):**
+     ```
+     New-Item -ItemType Directory -Force inbox, diario, projetos, arquivo, <area1>, <area2>
+     ```
 
 2. **Gravar o `CLAUDE.md` do vault** a partir de `templates/CLAUDE.vault.md`, preenchendo os
    placeholders com o que foi inferido e confirmado:
@@ -182,6 +188,8 @@ Só execute este passo depois do "pode construir". Trabalhe de forma cross-plata
 
 3. **Instalar as skills núcleo.** Copie as pastas `.claude/skills/diario/` e
    `.claude/skills/tldr/` para dentro do vault, mantendo a estrutura `.claude/skills/<nome>/`.
+   - **Mac/Linux:** `cp -r .claude/skills/diario .claude/skills/tldr <vault>/.claude/skills/`
+   - **Windows (PowerShell):** `Copy-Item -Recurse .claude/skills/diario, .claude/skills/tldr <vault>\.claude\skills\`
 
 4. **Criar a pasta de memória** e colocar `templates/MEMORY.md` como índice inicial dentro
    dela.
