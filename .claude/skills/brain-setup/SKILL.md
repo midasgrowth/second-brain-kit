@@ -121,11 +121,25 @@ sobrescreva**. Apresente as duas opções e pergunte qual a pessoa prefere:
 - **Começar limpo** — substituir (com backup `.bak` mesmo assim).
 
 **Procure se a pessoa já tem uma pasta de notas / vault Obsidian existente** (uma pasta com
-arquivos `.md`, ou uma pasta `.obsidian`). Se houver, pergunte se o cérebro nasce ali mesmo
-ou em outro lugar.
+arquivos `.md`, ou uma pasta `.obsidian`). Se houver, considere usá-la como destino.
+
+**Defina ONDE o cérebro vai viver — este é o passo mais importante.** O vault e as skills
+moram na MESMA pasta: o segundo cérebro é uma pasta onde, dentro dela, fica o conhecimento
+(`inbox/`, `projetos/`, etc.), as skills (`.claude/skills/`) e o contexto (`CLAUDE.md`). É de
+dentro dessa pasta que a pessoa vai abrir o Claude Code todo dia.
+
+Pergunte o caminho de destino e **recomende uma pasta separada e vazia**, NÃO a pasta deste
+kit:
+> "Onde você quer que seu segundo cérebro viva? Recomendo uma pasta nova e vazia — por
+> exemplo `~/Documentos/MeuCerebro` (Mac/Linux) ou `%USERPROFILE%\Documentos\MeuCerebro`
+> (Windows). Não use a pasta deste kit: ela é só o instalador, e seu conhecimento deve ficar
+> limpo e separado. Me diz o caminho que você quer."
+
+Guarde esse caminho como `<vault>` — todos os comandos do PASSO 3 usam ele como base.
 
 **Resuma o que encontrou**, em linguagem simples:
-> "Vi que você já tem [X] / Não encontrei nada existente, então começamos limpo."
+> "Vi que você já tem [X] / Não encontrei nada existente, então começamos limpo. Seu cérebro
+> vai viver em `<vault>`."
 
 ---
 
@@ -171,18 +185,20 @@ Só execute este passo depois do "pode construir". Trabalhe de forma cross-plata
 
 1. **Criar as pastas do vault** com as pastas decididas no Passo 2. Use a variante do SO da
    pessoa (detectado no Passo 1):
-   Inclua sempre a pasta `memoria/` (onde o sistema de memória vai morar).
+   Crie tudo DENTRO de `<vault>` (a pasta escolhida no PASSO 1), não na pasta do kit. Inclua
+   sempre a pasta `memoria/` (onde o sistema de memória vai morar).
    - **Mac/Linux:**
      ```
-     mkdir -p inbox diario projetos arquivo memoria <area1> <area2>
+     mkdir -p "<vault>"/{inbox,diario,projetos,arquivo,memoria,<area1>,<area2>}
      ```
    - **Windows (PowerShell):**
      ```
-     New-Item -ItemType Directory -Force inbox, diario, projetos, arquivo, memoria, <area1>, <area2>
+     foreach ($d in 'inbox','diario','projetos','arquivo','memoria','<area1>','<area2>') { New-Item -ItemType Directory -Force "<vault>\$d" }
      ```
 
-2. **Gravar o `CLAUDE.md` do vault** a partir de `templates/CLAUDE.vault.md`, preenchendo os
-   placeholders com o que foi inferido e confirmado:
+2. **Gravar o `CLAUDE.md` do vault** em `<vault>/CLAUDE.md`, a partir de
+   `templates/CLAUDE.vault.md`, preenchendo os placeholders com o que foi inferido e
+   confirmado:
    - `[PAPEL]` → o papel da pessoa.
    - seção "Quem Sou" → 2-3 frases em primeira pessoa, como você descrevendo o dono.
    - `[PASTA_AREA]` / `[PROPÓSITO]` → as pastas de área e para que servem.
@@ -195,9 +211,9 @@ Só execute este passo depois do "pode construir". Trabalhe de forma cross-plata
    - **Mac/Linux:** `cp -r .claude/skills/diario .claude/skills/tldr <vault>/.claude/skills/`
    - **Windows (PowerShell):** `Copy-Item -Recurse .claude/skills/diario, .claude/skills/tldr <vault>\.claude\skills\`
 
-4. **Inicializar a memória.** Copie `templates/MEMORY.md` para `memoria/MEMORY.md` (a pasta
-   `memoria/` já foi criada no item 1). Esse é o índice inicial; os 3 exemplos dentro dele são
-   para apagar e substituir pelos reais conforme o `/tldr` rodar.
+4. **Inicializar a memória.** Copie `templates/MEMORY.md` para `<vault>/memoria/MEMORY.md` (a
+   pasta `memoria/` já foi criada no item 1). Esse é o índice inicial; os 3 exemplos dentro
+   dele são para apagar e substituir pelos reais conforme o `/tldr` rodar.
 
 5. **Se havia `CLAUDE.md`/anotações pré-existentes e a pessoa escolheu "preservar e somar":**
    mescle o conteúdo antigo sem perder nada, **mostre o resultado ANTES de gravar** para a
@@ -210,7 +226,14 @@ as skills `/diario` e `/tldr`, e a memória com o `MEMORY.md`.
 
 ## PASSO 4 — Fechamento
 
-1. **Contexto automático em toda sessão.** Pergunte se a pessoa quer que eu carregue o
+1. **Mude para a casa nova — passo essencial.** O cérebro agora vive em `<vault>`, com as
+   skills dentro de `<vault>/.claude/skills/`. A partir daqui, a pessoa trabalha de DENTRO
+   dessa pasta, não da pasta do kit. Diga claramente:
+   > "Pronto! Seu cérebro está em `<vault>`. Feche este Claude Code e reabra de dentro dessa
+   > pasta — é de lá que você vai trabalhar todo dia. Os comandos `/diario` e `/tldr` já estão
+   > instalados lá. A pasta deste kit cumpriu o papel de instalador e pode ser apagada."
+
+2. **Contexto automático em toda sessão.** Pergunte se a pessoa quer que eu carregue o
    contexto do vault automaticamente em toda sessão. Se sim (e só com consentimento),
    injete no `CLAUDE.md` global a partir de `templates/CLAUDE.global.md`, preenchendo
    `[CAMINHO_ABSOLUTO_DO_VAULT]` com o caminho real do vault. Se o arquivo global já existir,
