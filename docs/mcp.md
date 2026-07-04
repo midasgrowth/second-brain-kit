@@ -25,6 +25,24 @@ Alguns conectores que costumam render bastante no dia a dia:
 Esses são só exemplos. O ecossistema de MCPs é grande e cresce; a ideia é a mesma para
 qualquer um: um conector que expõe uma ferramenta para a IA usar.
 
+## Quais valem a pena — recomendação
+
+Não instale tudo. Conecte só o que você realmente usa; cada MCP é um servidor a mais rodando.
+Como referência, estes são os que rendem para **quase qualquer pessoa**:
+
+- **Google Sheets** — se você acompanha qualquer coisa em planilha (números, controle,
+  listas), esse é o mais útil. A IA lê e edita direto.
+- **Google Drive** — buscar e ler documentos, PDFs e planilhas guardados no drive, sem
+  baixar e colar.
+- **Notion** — se sua base de notas ou documentação vive no Notion, esse conecta a IA a ela
+  (ler e escrever páginas e bancos).
+- **Canva** — se você mexe com design/imagens, dá para criar e editar peças direto.
+
+E há MCPs **de nicho**, que só valem se aquilo é o seu trabalho — por exemplo, conectores de
+plataformas de anúncios (Meta Ads), de banco de dados (Supabase), de rastreamento de
+campanhas, etc. Se não é a sua área, ignore: eles só adicionam ruído. A regra é simples —
+**conecte a ferramenta onde o seu trabalho já vive, e nada além disso.**
+
 ## Como conectar um MCP no Claude Code
 
 O comando geral, de forma ilustrativa, é:

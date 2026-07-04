@@ -266,6 +266,22 @@ as skills `/diario` e `/tldr`, e a memória com o `MEMORY.md`.
    Explique que são **moldes opcionais** em `add-ons/`, ativados ao mover a pasta para
    `.claude/skills/` e trocar os placeholders. Aponte `docs/add-ons.md`.
 
+5. **Recomende instalar os plugins — este é o passo que "liga o motor".** O vault sozinho já
+   guarda o contexto, mas o que faz o Claude trabalhar com método (planejar, debugar, revisar)
+   e com bom design vem de **plugins**. Recomende, em uma frase, instalar os **Superpowers**
+   (o conjunto essencial de skills de processo) e, para quem faz interface/design, o
+   **frontend-design**. Dê o caminho e aponte `docs/plugins.md`:
+   ```
+   claude plugin marketplace add anthropics/claude-plugins-official
+   claude plugin install superpowers@claude-plugins-official
+   ```
+   Diga que os detalhes (frontend-design, gerenciar plugins) estão em `docs/plugins.md`.
+
+6. **Aponte os MCPs conforme a ferramenta da pessoa.** Se ela mencionou planilhas, notas ou
+   drive, sugira o MCP correspondente (Sheets/Notion/Drive) — a ponte para a IA ler e editar
+   essas ferramentas direto. Regra: conectar só onde o trabalho dela já vive. Detalhes em
+   `docs/mcp.md`.
+
 ---
 
 Lembre, do começo ao fim: **(a) nunca construa sem confirmação explícita; (b) nunca

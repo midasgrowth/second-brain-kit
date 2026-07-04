@@ -61,11 +61,28 @@ arquivo do vault nunca se perde — é relido quando precisa.
 | **Sistema de memória** | Arquivos curtos com fatos duradouros + um `MEMORY.md` que indexa tudo e a IA lê no começo da sessão. |
 | **`/diario`** | Começa o dia: carrega contexto, lista pendências e destaca as 3 prioridades. |
 | **`/tldr`** | Fecha a sessão: resume decisões e próximas ações, salva na pasta certa e **alimenta a memória**. |
+| **Plugins** | O motor de skills (Superpowers, frontend-design). É o que faz o Claude trabalhar com método e bom design. Veja [docs/plugins.md](docs/plugins.md). |
 | **Add-ons** | Skills de nicho opcionais (marketing, conteúdo, deals). Veja [docs/add-ons.md](docs/add-ons.md). |
 | **MCPs** | Conectores opcionais (planilhas, notas, drives). Veja [docs/mcp.md](docs/mcp.md). |
 
 O ritual é simples: **`/diario` de manhã, `/tldr` no fim.** É o `/tldr` que faz a memória
 crescer — sem ele, o cérebro não aprende.
+
+---
+
+## Turbine: instale os plugins
+
+O vault sozinho já guarda seu contexto. Mas o que deixa o Claude Code **poderoso de verdade**
+— dezenas de skills para pensar, planejar, debugar e desenhar interfaces bonitas — vem de um
+plugin chamado **Superpowers**. Depois de montar seu cérebro, instale:
+
+```
+claude plugin marketplace add anthropics/claude-plugins-official
+claude plugin install superpowers@claude-plugins-official
+```
+
+Quem mexe com interface/design deve instalar também o **frontend-design**. O passo a passo
+completo (gerenciar, atualizar, explorar mais plugins) está em [docs/plugins.md](docs/plugins.md).
 
 ---
 
