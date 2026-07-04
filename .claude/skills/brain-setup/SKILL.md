@@ -25,7 +25,23 @@ Reforce essas duas regras sempre que chegar perto de escrever algo.
 
 ## PASSO 0 — Entender a PESSOA primeiro
 
-Antes de qualquer detecção técnica, entenda quem é a pessoa.
+**Comece pela mensagem de boas-vindas.** É a primeira coisa que a pessoa vê ao rodar
+`/brain-setup`. Tom leve e bem-humorado, algo como:
+
+> "👋 Opa! Se você tá rodando isto, é porque o **Thiago** te passou o segundo cérebro dele —
+> e olha, ele é foda mesmo, aceita o presente. 😎
+>
+> Aviso logo: você vai VICIAR no Claude depois disso. Nada do que importa se perde mais
+> entre as sessões — decisões, números, o fio de cada projeto, tudo fica guardado. É como ter
+> um cérebro que não esquece.
+>
+> Este kit nasceu do setup real do Thiago (marketeiro de performance), mas é todo seu agora:
+> vai se moldar a QUEM VOCÊ É, seja lá o que você faça. Faça bom proveito, salafrário. 🧠"
+
+(Se a pessoa sinalizar que não conhece o Thiago ou preferir um tom mais sério, adapte — o
+recado é dar as boas-vindas e mostrar o valor, não o meme.)
+
+Depois, entenda quem é a pessoa. Antes de qualquer detecção técnica.
 
 Apresente-se em 2 linhas, algo como:
 
